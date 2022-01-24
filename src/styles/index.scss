@@ -1,0 +1,62 @@
+@import 'variables.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+
+.container {
+  max-width: 1170px;
+  
+}
+
+img {
+  max-width: 100%;
+  display: inline-block;
+}
+
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: black;
+}
+body{
+  background-color: aqua;
+}
+html, body {
+  font-size: $main-font-size;
+  height: 100vh;
+}
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+.flex { display: flex; }
+.justify-start { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.justify-between { justify-content: space-between; }
+.align-start { align-items: flex-start; }
+.align-center { align-items: center; }
+.align-end { align-items: flex-end; }
+.direction-column { flex-direction: column; }
+
+.witdh100{
+  width: 100%;
+}
+.gray-text{color: gray;}
+.galery-image{
+  width: 14rem;
+  
+
+
+}
+.card-img-top{
+  height: 8rem;
+  object-fit: cover;
+}
+
+
+
