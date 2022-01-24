@@ -1,81 +1,136 @@
 "use strict";
-const arr = [
+const gallery = [
   {
     name: 'blue',
-    file_type:'.png' ,
-    size: 77.7,
-    measurment: 'kB'
+    file:'img/gallery/blue.png' ,
+    size: '77.7kB',
+
+    date:'2021-11-01'
 
   },
   {
     name: 'family',
-    file_type:'.png' ,
-    size: 55.9,
-    measurment: 'kB'
+    file:'img/gallery/family.png' ,
+    size: '55.9kB',
+    
+    date:'2021-11-01'
 
   },
   {
     name: 'fish',
-    file_type:'.png' ,
-    size: 33.5,
-    measurment: 'kB'
+    file:'img/gallery/fish.png' ,
+    size: '33.5kB',
+    
+    date:'2021-11-01'
 
   },
   {
     name: 'friends',
-    file_type:'.png' ,
-    size: 47.6,
-    measurment: 'kB'
+    file:'img/gallery/friends.png' ,
+    size: '47.6kB',
+    
+    date:'2021-11-01'
 
   },
   {
     name: 'grass',
-    file_type:'.png' ,
-    size: 42.8,
-    measurment: 'kB'
+    file:'img/gallery/grass.png' ,
+    size: '42.8kB',
+    
+    date:'2021-11-01'
 
   },
   {
     name: 'gymnast',
-    file_type:'.png' ,
-    size: 88.4,
-    measurment: 'kB'
+    file:'img/gallery/gymnast.png' ,
+    size: '88.4kB',
+    
+    date:'2021-11-01'
 
   },
   {
     name: 'kid',
-    file_type:'.png' ,
-    size: 57.5,
-    measurment: 'kB'
+    file:'img/gallery/kid.png' ,
+    size: '57.5kB',
+    
+    date:'2021-11-01'
 
   },
   {
     name: 'sunset',
-    file_type:'.png' ,
-    size: 24.8,
-    measurment: 'kB'
+    file:'img/gallery/sunset.png' ,
+    size: '24.8kB',
+   
+    date:'2021-11-01'
 
   },
   {
     name: 'tulip',
-    file_type:'.png' ,
-    size: 28.6,
-    measurment: 'kB'
+    file:'img/gallery/tulip.png' ,
+    size: '28.6kB',
+    
+    date:'2021-11-01'
 
   },
   {
     name: 'waitin',
-    file_type:'.png' ,
-    size: 65.1,
-    measurment: 'kB'
+    file:'img/gallery/waitin.png' ,
+    size: '65.1kB',
+    
+    date:'2021-11-01'
 
   },
   {
     name: 'wonderful',
-    file_type:'.png' ,
-    size: 89.4,
-    measurment: 'kB'
+    file:'img/gallery/wonderful.png' ,
+    size: '89.4kB',
+   
+    date:'2021-11-01'
 
   }
 ]
-console.log(arr);
+
+
+
+// gallery.map(photos);
+// function photos(item){
+
+
+
+//   return '<div class="col"><div class="card galery-image" ><img src="'
+//   +[item.file]+
+//   '" class="card-img-top" alt="'
+//   +[item.name]+
+//   '"><div class="card-body"><p class="card-text">'
+//   +[item.name]+
+//   '</p><p class="card-text gray-text">'
+//   +[item.size,item.measurment] +
+//   '</p></div></div></div>';
+// }
+// document.getElementById("photo").innerHTML = gallery.map(photos);
+
+// let content='';
+// for(let index=0;index<gallery.length;index++){
+//   const item=gallery[index];
+//   console.log(item);
+//   content+='<div class="col"><div class="card galery-image" ><img src="'
+//   +[item.file]+
+//   '" class="card-img-top" alt="'
+//   +[item.name]+
+//   '"><div class="card-body"><p class="card-text">'
+//   +[item.name]+
+//   '</p><p class="card-text gray-text">'
+//   +[item.size]+[item.measurment] +
+//   '</p></div></div></div>';
+// }
+// console.log(content);
+// document.getElementById("photo").innerHTML = content;
+
+let content='';
+for(let index=0;index<gallery.length;index++){
+  const item=gallery[index];
+  console.log(item);
+  content+=`<div class="col"> <div class="card galery-image" > <img src="${item.file}" class="card-img-top" alt="${item.name}"><div class="card-body"><p class="card-text">${item.name}</p><p class="card-text gray-text">${item.size}</p></div></div></div>`;
+}
+console.log(content);
+document.getElementById("photo").innerHTML = content;
