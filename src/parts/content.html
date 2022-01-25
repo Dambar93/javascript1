@@ -1,3 +1,4 @@
+
 <div class="content">
     <div id="search-profile" class="container flex justify-between align-center">
       <div>
@@ -20,10 +21,17 @@
     </div>
     <div class="container flex justify-between align-center">
       <div id="icons">
-        <i class="fas fa-file-upload fa-lg"></i>
+        <div class="image-upload">
+          <label for="file">
+            <i class="fas fa-file-upload fa-lg " > </i>
+          </label>
+        
+          <input id="file" type="file" accept="image/png image/jpg image/jpeg" multiple />
+        </div>
+        <!-- <i class="fas fa-file-upload fa-lg " > </i>
         <i class="fas fa-folder-plus fa-lg" ></i>
         <i class="fas fa-upload fa-lg"></i>
-        <i class="fas fa-trash-alt fa-lg"></i>
+        <i class="fas fa-trash-alt fa-lg"></i> -->
   
       </div>
       <div >
@@ -36,5 +44,5 @@
   
     </div>
     <div class="container">
-      <button id="upload">Upload</button>
+      <button id="uploadBtn" type="button">Upload</button>
     </div>

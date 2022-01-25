@@ -57,6 +57,10 @@ function js(){
   return src('src/js/**.js')
   .pipe(dest('dist/js'))
 }
+function modules(){
+  return src('src/js/modules/**.js')
+  .pipe(dest('dist/js/modules'))
+}
 // function font() {
 //   return src('src/font/**/*.{ttf,otf}', { read: false })
 //       .pipe(gulpFont({
@@ -81,7 +85,7 @@ function serve() {
 }
 
 
-exports.start = series(clear, html,img,img_folders, scss,js, serve);
-exports.reload = series(html,img, scss,img_folders,js, serve);
+exports.start = series(clear, html,img,img_folders, scss,js,modules, serve);
+exports.reload = series(html,img, scss,img_folders,js,modules, serve);
 
 exports.delete = series(clear);

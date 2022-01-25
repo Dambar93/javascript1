@@ -14,11 +14,14 @@
         margin: 0px;
        
     }
+    .image-upload>input {
+        display: none;
+      }
     #search-profile{
        
         height: 5%;
 
-
+     
 
         input{
             width: 100%;
@@ -79,7 +82,7 @@
         }
         
     }
-    #upload{
+    #uploadBtn{
         border-radius: 5px;
         border: 1px solid $sidebar-color ;
         color: $sidebar-color;
