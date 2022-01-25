@@ -91,23 +91,22 @@ const gallery = [
 ]
 
 
+let masyvas='';
+gallery.map(photos);
+function photos(item){
 
-// gallery.map(photos);
-// function photos(item){
-
-
-
-//   return '<div class="col"><div class="card galery-image" ><img src="'
-//   +[item.file]+
-//   '" class="card-img-top" alt="'
-//   +[item.name]+
-//   '"><div class="card-body"><p class="card-text">'
-//   +[item.name]+
-//   '</p><p class="card-text gray-text">'
-//   +[item.size,item.measurment] +
-//   '</p></div></div></div>';
-// }
-// document.getElementById("photo").innerHTML = gallery.map(photos);
+masyvas+=  '<div class="col"><div class="card galery-image" ><img src="'
++[item.file]+
+'" class="card-img-top" alt="'
++[item.name]+
+'"><div class="card-body"><p class="card-text">'
++[item.name]+
+'</p><p class="card-text gray-text">'
++[item.size,item.measurment] +
+'</p></div></div></div>'
+;
+}
+document.getElementById("photo").innerHTML = masyvas;
 
 // let content='';
 // for(let index=0;index<gallery.length;index++){
@@ -126,11 +125,11 @@ const gallery = [
 // console.log(content);
 // document.getElementById("photo").innerHTML = content;
 
-let content='';
-for(let index=0;index<gallery.length;index++){
-  const item=gallery[index];
-  console.log(item);
-  content+=`<div class="col"> <div class="card galery-image" > <img src="${item.file}" class="card-img-top" alt="${item.name}"><div class="card-body"><p class="card-text">${item.name}</p><p class="card-text gray-text">${item.size}</p></div></div></div>`;
-}
-console.log(content);
-document.getElementById("photo").innerHTML = content;
+// let content='';
+// for(let index=0;index<gallery.length;index++){
+//   const item=gallery[index];
+//   console.log(item);
+//   content+=`<div class="col"> <div class="card galery-image" > <img src="${item.file}" class="card-img-top" alt="${item.name}"><div class="card-body"><p class="card-text">${item.name}</p><p class="card-text gray-text">${item.size}</p></div></div></div>`;
+// }
+// console.log(content);
+// document.getElementById("photo").innerHTML = content;
