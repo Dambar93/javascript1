@@ -70,6 +70,11 @@
             border-radius: 5px;
            
         }
+        .selected{
+            color: $white-color;
+            background-color: $text-color;
+            border-radius: 5px;
+        }
     }
 
     #icons{
