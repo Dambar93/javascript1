@@ -194,18 +194,16 @@ const render = (arr) => {
   
     imageItem.addEventListener('click',function(){
       if(selectedItems.includes(element.id)){
-        console.log('jau yra');
+       
         removeItemOnce(selectedItems,element.id);
-        console.log(removeItemOnce(selectedItems,element.id));
+       
         imageItem.setAttribute('style','opacity:1;');
-        console.log(selectedItems);
-
+        
 
       }else{
         selectedItems.push(element.id);
         imageItem.setAttribute('style','opacity:0.5;');
-        console.log(element.id);
-        console.log(selectedItems);
+       
       }
 
     })
@@ -219,13 +217,13 @@ function space(array){
   for(let index=0;index<array.length;index++){
     const item=array[index];
     let mb=convertBytesToMb(item.size);
-    console.log(item);
+   
     size+=mb;
   }
   return document.getElementById("size").innerHTML = `<div class="gb flex direction-column "><div id="show_capacity" class="flex  numbers justify-between"><h4 >${size} / 100 Mb  </h4> <img src="img/add.png" alt=""></div><progress id="capacity" value="${size}" max="100">  </progress></div>`
 }
 
-console.log(selectedItems)
+
 function del(){
   document.getElementById('delete').addEventListener('click', function () {
     console.log(selectedItems);
@@ -272,14 +270,14 @@ document.getElementById('uploadBtn').addEventListener('click', function () {
 
   }
   console.log(dateNow());
-  console.log(images2);
+  
   render(images2)
   space(gallery)
   
 })
 }
 document.getElementById('sort_name').addEventListener('click',function(){
-  console.log('sort');
+
   let sorting=gallery.sort(function(a, b) {
     var nameA = a.name.toUpperCase(); // ignore upper and lowercase
     var nameB = b.name.toUpperCase(); // ignore upper and lowercase
@@ -292,15 +290,16 @@ document.getElementById('sort_name').addEventListener('click',function(){
 
     return 0;
   });
+  this.classList.toggle("selected",render(gallery));
   document.getElementById('photo').innerHTML = "";
   document.getElementById('sort_size')?.classList.remove("selected");
   document.getElementById('sort_date')?.classList.remove("selected");
-  this.classList.toggle("selected");
+ 
   render(sorting)
 })
 
 document.getElementById('sort_size').addEventListener('click',function(){
-  console.log('sort');
+ 
   let sorting=gallery.sort(function (a, b) {
     return a.size - b.size;
   });
@@ -310,8 +309,9 @@ document.getElementById('sort_size').addEventListener('click',function(){
   this.classList.toggle("selected");
   render(sorting)
 })
+
 document.getElementById('sort_date').addEventListener('click',function(){
-  console.log('sort');
+ 
   let sorting=gallery.sort(function(a, b) {
     var nameA = a.date.toUpperCase(); // ignore upper and lowercase
     var nameB = b.date.toUpperCase(); // ignore upper and lowercase
@@ -328,10 +328,48 @@ document.getElementById('sort_date').addEventListener('click',function(){
   document.getElementById('sort_size')?.classList.remove("selected");
   document.getElementById('sort_name')?.classList.remove("selected");
   this.classList.toggle("selected");
-  console.log(sorting);
+  
   render(sorting)
 })
+let result=[];
+document.getElementById('myInput').onkeyup = function() {
+   // Declare variables
+   var input, filter, ul, li, a, i, txtValue;
+   input = document.getElementById('myInput');
+   filter = input.value.toUpperCase();
+  
+  console.log(filter);
+   
+   // filter = input.value.toUpperCase();
+   // ul = document.getElementById("myUL");
+   // li = ul.getElementsByTagName('li');
+    
+   // Loop through all list items, and hide those who don't match the search query
+   for (i = 0; i < gallery.length-1; i++) {
+    a=gallery[i]['name'].toUpperCase().indexOf(filter);
+    console.log(a)
+   
+    console.log(result)
+    if(a > -1){
+      console.log(gallery[i]['name'].toUpperCase())
+      result.push({
+        
+        id:gallery[i]['id'],
+      name: gallery[i]['name'],
+      size: gallery[i]['size'],
+      file: gallery[i]['file'],
+      date: gallery[i]['date']
+      }
+      )
+    }else { '<h1>No Results</h1>'}
 
+   }
+   document.getElementById('photo').innerHTML = "";
+   render(result)
+   result.length=0
+    }
+ 
+  
 
 
 
