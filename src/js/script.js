@@ -3,7 +3,7 @@
 "use strict";
 
 
-import {convertBytesToMb, dateNow} from "./modules/heplers.js";
+import {convertBytesToMb, dateNow,getPosts, deletePost, getPost, createPost, patchPost} from "./modules/heplers.js";
 
 const gallery = [
   {
@@ -331,20 +331,16 @@ document.getElementById('sort_date').addEventListener('click',function(){
   
   render(sorting)
 })
+//search
 let result=[];
 document.getElementById('myInput').onkeyup = function() {
-   // Declare variables
-   var input, filter, ul, li, a, i, txtValue;
+  
+   var input, filter, a, i;
    input = document.getElementById('myInput');
    filter = input.value.toUpperCase();
   
   console.log(filter);
-   
-   // filter = input.value.toUpperCase();
-   // ul = document.getElementById("myUL");
-   // li = ul.getElementsByTagName('li');
-    
-   // Loop through all list items, and hide those who don't match the search query
+ 
    for (i = 0; i < gallery.length-1; i++) {
     a=gallery[i]['name'].toUpperCase().indexOf(filter);
     console.log(a)
@@ -377,6 +373,8 @@ del()
 render(gallery)
 space(gallery)
 upload(gallery)
+
+
 
 
 

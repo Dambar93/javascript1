@@ -29,6 +29,7 @@ function html() {
 }
 
 
+
 function scss() {
   return src('src/styles/**.scss')
     .pipe(sass())
@@ -79,6 +80,7 @@ function serve() {
     server: './dist'
   })
   watch('src/js/**.js', series(js)).on('change', sync.reload)
+  watch('src/js/modules/**.js', series(js)).on('change', sync.reload)
   watch('src/**.html', series(html)).on('change', sync.reload)
   watch('src/styles/**.scss', series(scss)).on('change', sync.reload)
   watch('src/parts/**.html', series(html)).on('change', sync.reload)

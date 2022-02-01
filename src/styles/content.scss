@@ -108,3 +108,52 @@
     
 
 }
+
+#user_table{
+    width: 60%;
+    height: 100vh;
+    background-color: white;
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      i{
+          padding:0px 2px;
+      }
+      i:hover{
+          color: $blue-color;
+      }
+}
+#pop_up{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+    #pop_up_content{
+        width: 50%;
+        height: 50%;
+        background-color: white;
+        border-radius: 15px;
+
+        button{
+            border-radius: 15px;
+        }
+
+    }
+}
